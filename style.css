@@ -1,0 +1,198 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    background-image: linear-gradient(153deg, #000000 37%, #9c292b 85%, #ffffff 100%);
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: white;   
+}
+
+
+h1 {
+    background-color: rgb(96, 26, 26);
+    padding: 5px;
+    border-radius: 5px;
+    font-family: 'Michroma', sans-serif;
+    font-size: 45px;
+}
+
+header h3 {
+    font-size: 40px;
+}
+
+header p {
+    font-size: 20px;
+}
+
+.camera-list {
+    font-size: 30px;
+    margin: 2.5em;
+    padding-block: 1.5em;
+    text-align: center;
+    background-image: radial-gradient(circle 610px at 5.2% 51.6%,  rgba(5,8,114,1) 0%, rgba(7,3,53,1) 97.5% );
+    border-radius: 15px;
+    line-height: 1.5em;
+}
+
+li {
+    list-style: none;
+}
+
+.camera-list h4 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 60px;
+}
+
+input[type=date] {
+    background-color: rgb(0, 0, 0);
+    color-scheme: dark;
+    color: white;
+    width: 25%;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    margin-inline: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+select {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    width: 25%;
+    box-sizing: border-box;
+    padding: 7px;
+    margin-block: 10px;
+    border-radius: 5px;
+}
+
+label {
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+button {
+    background: linear-gradient(to right, #2e0f55, #7e7575);
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Barlow', sans-serif;
+    border-radius: 7px;
+    box-sizing: border-box;
+    width: 10%;
+    padding: 10px;
+}
+
+
+img {
+    width: 100%;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+
+/* --------------------------------------------------------- */
+
+@media screen and (max-width: 600px) {
+    .camera-list {
+        text-align: left;
+        font-size: 15px;
+        margin: 1em;
+        line-height: 1.9em;
+    }
+
+    .camera-list h4 {
+        text-align: justify;
+        font-size: 18px;
+    }
+
+    input[type=date], select {
+        display: block;
+        margin: 0 auto;
+        text-align: left;
+        width: 50%;
+    }
+
+
+    button {
+        width: 25%;
+        margin: 15px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .camera-list {
+        font-size: 20px;
+    }
+    .camera-list h4 {
+        font-size: 35px;
+    }
+    input[type=date], select {
+        display: block;
+        margin: 0 auto;
+        text-align: left;
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .camera-list {
+        font-size: 20px;
+        margin-inline: 5em;
+    }
+    
+    .camera-list h4 {
+        font-size: 30px;
+    }
+
+    input[type=date], select {
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        width: 25%;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+    .camera-list {
+        font-size: 20px;
+        margin-inline: 10em;
+    }
+    
+    .camera-list h4 {
+        font-size: 30px;
+    }
+
+    input[type=date], select {
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .camera-list {
+        font-size: 20px;
+        margin-inline: 15em;
+    }
+    
+    .camera-list h4 {
+        font-size: 30px;
+    }
+
+    input[type=date], select {
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        width: 15%;
+    }
+}

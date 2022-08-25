@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Michroma&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Curiosity: Mars Photos</title>
+</head>
+<body>
+    <header>
+        <h1>Mars Photos</h1>
+        <h3>Curiosity Rover Photos</h3>
+        <p>Below, you can select a date and camera to view the pictures the rover
+        has taken.</p>
+    </header>
+
+    <div class="camera-list ">
+        <ul>
+            <h4>Camera List</h4>
+            <li>Front Hazard Avoidance Camera - FHAZ</li>
+            <li>Rear Hazard Avoidance Camera - RHAZ</li>
+            <li>Mast Camera - MAST</li> 
+            <li>Chemistry and Camera Complex - CHEMCAM</li> 
+            <li>Mars Hand Lens Imager - MAHLI</li> 
+            <li>Mars Descent Imager - MARDI</li> 
+            <li>Navigation Camera - NAVCAM</li> 
+            <li>Panoramic Camera - PANCAM</li> 
+            <li>Miniature Thermal Emission Spectrometer - <q>Mini-TES</q> - MINITES</li>  
+        </ul>
+    </div>
+    <div id="data">
+        <label for="date">Choose a date:</label>
+        <input type="date" name="date" v-model="date">
+        <label for="camera">Select Rover Camera:</label>
+        <select name="camera" v-model="cameraChoice">
+            <option :value="`${ camera }`" v-for="camera in cameras">{{ camera }}</option>
+        </select><br>
+        <button @click="marsData">Get photo</button>
+        <div v-if="Object.keys(results).length">
+            <img :src="`${ results.photos[0].img_src }`"/>
+        </div>
+        <div v-else>
+            <p>No photos</p>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>&copy; Curiosity: Mars Photos - Isaac Fearn</p>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="axios.js"></script>
+</body>
+</html>
