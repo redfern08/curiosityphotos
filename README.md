@@ -9,4 +9,7 @@ If an image does not exist, select another date.
 
 Here is an example image from the app.
 
+Checkout out the app!
+[Curiosity Photos](https://isaacfearn.com/curiosityphotos/)
+
 ![mars](photos/fhaz_nov_12.jpg)
