@@ -6,51 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Michroma&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Curiosity: Mars Photos</title>
 </head>
 <body>
     <header>
-        <h1>Mars Photos</h1>
-        <h3>Curiosity Rover Photos</h3>
-        <p>Below, you can select a date and camera to view the pictures the rover
-        has taken.</p>
+        <div class="container" id="header-txt">
+            <h1>Mars Photos</h1>
+            <h3>Curiosity Rover Images</h3>
+            <p>
+                Below, you can select a date and camera to view the pictures the rover
+            has taken.
+            </p>
+        </div>
     </header>
-
-    <div class="camera-list ">
-        <ul>
-            <h4>Camera List</h4>
-            <li>Front Hazard Avoidance Camera - FHAZ</li>
-            <li>Rear Hazard Avoidance Camera - RHAZ</li>
-            <li>Mast Camera - MAST</li> 
-            <li>Chemistry and Camera Complex - CHEMCAM</li> 
-            <li>Mars Hand Lens Imager - MAHLI</li> 
-            <li>Mars Descent Imager - MARDI</li> 
-            <li>Navigation Camera - NAVCAM</li> 
-            <li>Panoramic Camera - PANCAM</li> 
-            <li>Miniature Thermal Emission Spectrometer - <q>Mini-TES</q> - MINITES</li>  
-        </ul>
-    </div>
-    <div id="data">
-        <label for="date">Choose a date:</label>
-        <input type="date" name="date" v-model="date">
-        <label for="camera">Select Rover Camera:</label>
-        <select name="camera" v-model="cameraChoice">
-            <option :value="`${ camera }`" v-for="camera in cameras">{{ camera }}</option>
-        </select><br>
-        <button @click="marsData">Get photo</button>
-        <div v-if="Object.keys(results).length">
-            <img :src="`${ results.photos[0].img_src }`"/>
+    <main>
+        <div class="container" id="cam-list">
+            <div class="camera-list ">
+                <ul class="list-group">
+                    <h4>Camera List</h4>
+                    <li class="list-group-item bg-black bg-opacity-50 text-white">Front Hazard Avoidance Camera - FHAZ</li>
+                    <li class="list-group-item bg-black bg-opacity-50 text-white">Rear Hazard Avoidance Camera - RHAZ</li>
+                    <li class="list-group-item bg-black bg-opacity-50 text-white">Mast Camera - MAST</li> 
+                    <li class="list-group-item bg-black bg-opacity-50 text-white">Chemistry and Camera Complex - CHEMCAM</li> 
+                    <li class="list-group-item bg-black bg-opacity-50 text-white">Mars Hand Lens Imager - MAHLI</li> 
+                    <li class="list-group-item bg-black bg-opacity-50 text-white">Mars Descent Imager - MARDI</li> 
+                    <li class="list-group-item bg-black bg-opacity-50 text-white">Navigation Camera - NAVCAM</li> 
+                    <li class="list-group-item bg-black bg-opacity-50 text-white">Panoramic Camera - PANCAM</li> 
+                    <li class="list-group-item bg-black bg-opacity-50 text-white">Miniature Thermal Emission Spectrometer - <q>Mini-TES</q> - MINITES</li>  
+                </ul>
+            </div>
         </div>
-        <div v-else>
-            <p>No photos</p>
-        </div>
-    </div>
 
-    <div class="copyright">
-        <p>&copy; Curiosity: Mars Photos - Isaac Fearn</p>
-    </div>
-    
+        <div class="container">
+            <div id="data">
+                <div class="container" id="data-table">
+                    <label for="date">Choose a date</label><br>
+                    <input class="btn btn-dark" type="date" name="date" v-model="date"><br>
+                    <label for="camera">Select Rover Camera</label><br>
+                    <select class="dropdown btn btn-dark" name="camera" v-model="cameraChoice">
+                        <option class="dropdown-item" :value="`${ camera }`" v-for="camera in cameras">{{ camera }}</option>
+                    </select><br>
+                    <button class="btn btn-primary mt-3" id="button-text" @click="marsData">Get photo</button>
+                </div>
+                <div v-if="Object.keys(results).length">
+                    <img :src="`${ results.photos[0].img_src }`" style="width: 80%;"/>
+                </div>
+                <div v-else>
+                    <p>No photos</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; Curiosity: Mars Photos - Isaac Fearn</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
