@@ -1,3 +1,9 @@
+#UPDATE
+This application is no longer available to use.  The API is no longer
+being maintained.  This project will be archived.  There are plans to
+build an app that gathers data from NASA's missions but
+that is TBD.
+
 # Curiosity Photos
 
 ### About this app
